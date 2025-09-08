@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import type { WeatherDataPoint } from './interfaces/WeatherDataPoint.interface'
 import axios from 'axios';
+import Dashboard from './components/Dashboard';
+
 
 function App() {
   const [data, setData] = useState<WeatherDataPoint[]>([]);
@@ -20,7 +22,7 @@ function App() {
 
   return (
     <>
-      {data.length > 0 && <div> en proceso... </div>}
+      {data.length > 0 && <Dashboard data={data} />}
       {error && <div className='alert alert-danger'> Ocurrió un error al cargar los datos </div>}
       {isLoading && <div className='spinner-border text-primary' role='status'></div>}
     </>
