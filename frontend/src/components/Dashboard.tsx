@@ -2,6 +2,7 @@ import type { WeatherDataPoint } from "../interfaces/WeatherDataPoint.interface"
 
 import DailyAverageView from "./DailyAverageView";
 import PerChangeTemperatView from "./PerChangeTemperatView";
+import MovingAverageView from "./MovingAverageView";
 
 
 type DashboarProps = {
@@ -17,6 +18,7 @@ const Dashboard = (props: DashboarProps) => {
             <div style={{ display: "flex", flexWrap: "wrap" }}>
                 <DailyAverageView dataLine={props.data} />
                 <PerChangeTemperatView databar={props.data} />
+                <MovingAverageView dataLine={props.data} />
             </div>
         </div>
     )
